@@ -1,4 +1,7 @@
-/*Eich Institut dingens*/
+/*
+Eich Institut dingens
+Hausaufgaben
+*/
 
 #include<stdio.h>
 #include<math.h>
