@@ -42,11 +42,16 @@ int main()
 		Ui = (4.7 * Q) + 0.13;
 		Diff = U0 - Ui;
 		Proz = (Diff * 100) / U0;
+		absProz = Proz;
+		
+		if(absProz < 0){
+			absProz = absProz * -1;
+		}
 
 		printf("%.2f\t\t%.2f\t%.2f\t%+.2f\t%+.2f\n", Q, U0, Ui, Diff, Proz);
 
-		if(fabs(Proz) > maxProz){
-			maxProz = fabs(Proz);
+		if(absProz > maxProz){
+			maxProz = absProz;
 			zeile = i + 1;
 		}
 
