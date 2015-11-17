@@ -31,7 +31,7 @@ int main()
 		{2.0, 8.61}};
 
 	int i, zeile;
-	float Q, U0, Ui, Diff, Proz, maxProz;
+	float Q, U0, Ui, Diff, Proz, maxProz, absProz;
 	maxProz = 0.0;
 
 	printf("Q[cubm/h]\tU0[V]\tUi[V]\tDiff[V]\t %%\n");
@@ -46,16 +46,14 @@ int main()
 		if(absProz < 0){
 			absProz = absProz * -1;
 		}
-
-		printf("%.2f\t\t%.2f\t%.2f\t%+.2f\t%+.2f\n", Q, U0, Ui, Diff, Proz);
-
 		if(absProz > maxProz){
 			maxProz = absProz;
 			zeile = i + 1;
 		}
 
-
+		printf("%.2f\t\t%.2f\t%.2f\t%+.2f\t%+.2f\n", Q, U0, Ui, Diff, Proz);
 	}
+	
 	printf("Maximale Abweichung: %.2f%% bei Messwert %d\n", maxProz, zeile);
 	if(maxProz > 5.0){
 		printf("Prüfung nicht bestanden\n");
